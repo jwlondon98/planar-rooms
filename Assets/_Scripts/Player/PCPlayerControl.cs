@@ -19,12 +19,15 @@ public class PCPlayerControl : MonoBehaviour
 
     private Camera cam;
 
+    public static PCPlayerControl instance;
+
     #endregion
 
     #region Unity Methods
 
     private void Awake()
     {
+        instance = this;
         cam = Camera.main;
     }
 
@@ -85,6 +88,13 @@ public class PCPlayerControl : MonoBehaviour
         }
         else
             reticle.sprite = ret;
+    }
+    
+    public void LoadCheckpoint(Checkpoint cp)
+    {
+        cp.reached = true;
+        transform.position = cp.transform.position;
+        transform.rotation = cp.transform.rotation;
     }
 
     #endregion
