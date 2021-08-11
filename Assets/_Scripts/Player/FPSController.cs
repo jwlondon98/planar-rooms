@@ -8,6 +8,7 @@ public class FPSController : MonoBehaviour {
     public float runSpeed = 6;
     public float smoothMoveTime = 0.1f;
     public float jumpForce = 8;
+    public float initGravity = 0;
     public float gravity = 18;
 
     public bool lockCursor;
@@ -33,6 +34,13 @@ public class FPSController : MonoBehaviour {
     bool jumping;
     float lastGroundedTime;
     bool disabled;
+
+    public static FPSController instance;
+
+    private void Awake() {
+        instance = this;
+        initGravity = gravity;
+    }
 
     void Start () {
         cam = Camera.main;
@@ -95,7 +103,6 @@ public class FPSController : MonoBehaviour {
         float mX = Input.GetAxisRaw ("Mouse X");
         float mY = Input.GetAxisRaw ("Mouse Y");
 
-        // Verrrrrry gross hack to stop camera swinging down at start
         float mMag = Mathf.Sqrt (mX * mX + mY * mY);
         if (mMag > 5) {
             mX = 0;

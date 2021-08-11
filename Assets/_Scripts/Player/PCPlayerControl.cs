@@ -38,56 +38,78 @@ public class PCPlayerControl : MonoBehaviour
 
     void Update()
     {
-        DetectGrabbables();
+        Raycast();
     }
 
     #endregion
 
     #region Custom Methods
 
-    private void DetectGrabbables()
+    private void Raycast()
     {
         RaycastHit hit = Helpers.Raycast(cam.transform.position, cam.transform.forward, grabbableDetectDistance);
-
-        if (hit.collider && hit.collider.CompareTag("Grabbable"))
+        
+        if (hit.collider)
         {
-            reticle.sprite = retHit;
+            if (hit.collider.CompareTag("Grabbable"))
+                DetectGrabbables(hit);
+            else if (hit.collider.CompareTag("Button"))
+                ActivateButton(hit);
+            else
+                reticle.sprite = ret;
+        }
+    }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+    private void DetectGrabbables(RaycastHit hit)
+    {
+        reticle.sprite = retHit;
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
+            Lock lockObj = grabbable.GetComponent<Lock>();
+            lockObj.TryKey(lockObj.requiredKey);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
+
+            // conditions
+            if (lastGrabbedObj)
             {
-                Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
-                Lock lockObj = grabbable.GetComponent<Lock>();
-                lockObj.TryKey(lockObj.requiredKey);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Grabbable grabbable = hit.collider.GetComponent<Grabbable>();
-
-                // conditions
-                if (lastGrabbedObj)
-                {
-                    if (lastGrabbedObj.Equals(grabbable))
-                        return;
-
-                    // check if trying to place a key in a lock
-                    if (lastGrabbedObj.grObjType == GrObjType.Key &&
-                        grabbable.grObjType == GrObjType.Lock)
-                    {
-                        lastGrabbedObj.GetComponent<Key>().TryUnlock(grabbable.GetComponent<Lock>());
-                        return;
-                    }
-                }
-
-                if (!grabbable.canBeGrabbed)
+                if (lastGrabbedObj.Equals(grabbable))
                     return;
 
-                lastGrabbedObj = grabbable;
-                lastGrabbedObj.gameObject.SetActive(false);
+                // check if trying to place a key in a lock
+                if (lastGrabbedObj.grObjType == GrObjType.Key &&
+                    grabbable.grObjType == GrObjType.Lock)
+                {
+                    lastGrabbedObj.GetComponent<Key>().TryUnlock(grabbable.GetComponent<Lock>());
+                    return;
+                }
+            }
+
+            if (!grabbable.canBeGrabbed)
+                return;
+
+            lastGrabbedObj = grabbable;
+            lastGrabbedObj.gameObject.SetActive(false);
+        }
+    }
+    
+    private void ActivateButton(RaycastHit hit)
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Button button = hit.collider.gameObject.GetComponent<Button>();
+            
+            if (button && !button.pressed)
+            {
+                button.pressed = true;
+                button.onClick.Invoke();
             }
         }
-        else
-            reticle.sprite = ret;
     }
     
     public void LoadCheckpoint(Checkpoint cp)
