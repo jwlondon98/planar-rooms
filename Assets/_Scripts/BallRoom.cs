@@ -6,12 +6,12 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 
-public class Button : MonoBehaviour
+public class BallRoom : MonoBehaviour
 {
-    public bool pressed = false;
-    public Ball correspondingBall;
+    public Ball ball1;
+    public Ball ball2;
     
-    [Serializable]
+     [Serializable]
     public class ButtonClickedEvent : UnityEvent {}
     
     // Event delegates triggered on click.
@@ -19,28 +19,21 @@ public class Button : MonoBehaviour
     [SerializeField]
     private ButtonClickedEvent m_OnClick = new ButtonClickedEvent();
     
+    public static BallRoom instance;
+    
     public ButtonClickedEvent onClick
     {
         get { return m_OnClick; }
         set { m_OnClick = value; }
     }
     
-    private Animator animator;
-    
-    private void Awake() 
-    {
-        animator = GetComponent<Animator>();    
+    private void Awake() {
+        instance = this;    
     }
     
-    public void OnPress()
+    public void CheckUnfrozen()
     {
-        pressed = true;
-        animator.SetBool("OnPress", true);
-    }
-    
-    public void UnfreezeBall()
-    {
-        correspondingBall.Unfreeze();
-        BallRoom.instance.CheckUnfrozen();
+        if (ball1.unfrozen && ball2.unfrozen)
+            onClick.Invoke();
     }
 }
