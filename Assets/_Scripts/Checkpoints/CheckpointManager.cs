@@ -22,10 +22,10 @@ public class CheckpointManager : MonoBehaviour
     {
         int cp = PlayerPrefs.GetInt("cp", 0);
         
-        if (!useDebugCP)
-            LoadCheckpoint(cp);
-        else
-            LoadCheckpoint(debugCP);
+        // if (!useDebugCP)
+        //     LoadCheckpoint(cp);
+        // else
+        //     LoadCheckpoint(debugCP);
     }
 
     void Update()
