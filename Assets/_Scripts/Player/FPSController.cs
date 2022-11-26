@@ -100,6 +100,9 @@ public class FPSController : MonoBehaviour {
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            Slide();
+
         float mX = Input.GetAxisRaw ("Mouse X");
         float mY = Input.GetAxisRaw ("Mouse Y");
 
@@ -118,5 +121,10 @@ public class FPSController : MonoBehaviour {
         transform.eulerAngles = Vector3.up * smoothYaw;
         cam.transform.localEulerAngles = Vector3.right * smoothPitch;
 
+    }
+
+    private void Slide()
+    {
+        
     }
 }
