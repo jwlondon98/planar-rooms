@@ -42,7 +42,7 @@ Material:
     m_Floats:
     - _AlphaCutoff: 0.5
     - _Dimming: 0.5
-    - _DistanceCutoff: 5
+    - _DistanceCutoff: 100
     - _Float0: 166.4001
     - _Float1: 3.348565
     - _Float2: 1
@@ -50,16 +50,16 @@ Material:
     - _Float4: 0.69
     - _Keyword0: 0
     - _NormalScale: 1
-    - _OutlineWidth: 0.001
+    - _OutlineWidth: 0.005
     - _RimOffset: 0
     - _RimOffset1: 0.7
-    - _RimShadow: 1
+    - _RimShadow: 0
     - __dirty: 0
     m_Colors:
     - _Color0: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RimColor: {r: 0, g: 1, b: 0.009909153, a: 0}
-    - _RimFalloff: {r: 0, g: 0.5, b: 0, a: 0}
+    - _RimColor: {r: 0, g: 0, b: 0, a: 0}
+    - _RimFalloff: {r: 0, g: 0, b: 0, a: 0}
     - _Vector0: {r: 0, g: 0.4, b: 0, a: 0}
-    - _WireColor: {r: 0.11768174, g: 1, b: 0, a: 0}
+    - _WireColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

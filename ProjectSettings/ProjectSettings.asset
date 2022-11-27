@@ -588,7 +588,18 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    1: AMPLIFY_SHADER_EDITOR
+    1: AMPLIFY_SHADER_EDITOR;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    7: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    13: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    14: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    19: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    21: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    25: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    28: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    29: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    30: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    32: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
+    33: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_5;RealtimeCSG_1_5_72
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

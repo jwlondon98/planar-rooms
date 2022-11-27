@@ -40,23 +40,24 @@ namespace Phyzk
         {
             Vector3 fwdVect = Vector3.zero;
             Vector3 horizVect = Vector3.zero;
-            if (moveVect.y <= 0.1f)
-            {
-                fwdVect = body.transform.right * -forwardDecelerationRate;
-            }
-            else
-            {
-                fwdVect = body.transform.right * moveVect.y * forwardSpeed;
-            }
-            
-            if (moveVect.x <= 0.1f)
-            {
-                horizVect = body.transform.forward * - horizontalDecelerationRate;
-            }
-            else
-            {
-                horizVect = body.transform.forward * -moveVect.x * horizontalSpeed;
-            }
+            // if (moveVect.y <= 0.1f)
+            // {
+            //     fwdVect = body.transform.right * -forwardDecelerationRate;
+            // }
+            // else
+            // {
+            //     fwdVect = body.transform.right * moveVect.y * forwardSpeed;
+            // }
+            //
+            // if (moveVect.x <= 0.1f)
+            // {
+            //     horizVect = body.transform.forward * - horizontalDecelerationRate;
+            // }
+            // else
+            // {
+            //     horizVect = body.transform.forward * -moveVect.x * horizontalSpeed;
+            // }
+            fwdVect = body.transform.right * moveVect.y * forwardSpeed;
 
             rb.AddTorque(fwdVect + horizVect);
            
