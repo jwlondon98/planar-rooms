@@ -97,6 +97,70 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""W"",
+                    ""type"": ""Button"",
+                    ""id"": ""cce8ae9b-6d3e-4be1-98f9-952f130ac15d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""A"",
+                    ""type"": ""Button"",
+                    ""id"": ""605cc813-a66e-43bf-b9b5-aadb04454e97"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""S"",
+                    ""type"": ""Button"",
+                    ""id"": ""4c14490c-9cfa-4c88-8010-3c2d6b77c1e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""D"",
+                    ""type"": ""Button"",
+                    ""id"": ""0ccd67c1-9d01-44cb-af39-00f2daa5e5b5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Crouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""a0258237-9c43-4bcb-a21e-6c720fc154ee"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""28cdcc94-b23c-42ef-b997-4b7e030fe3e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""eeaa2113-309c-465a-9f68-b2e25b58c080"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Mouse Pos"",
+                    ""type"": ""Value"",
+                    ""id"": ""c4777f7c-4777-4f5e-9528-a49a99906258"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -209,6 +273,94 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
                     ""action"": ""Secondary_Right"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6080b9a-deee-4700-945b-93e27443cb7e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""W"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""824c02aa-577c-4dd4-9aa6-719041284024"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""S"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""814cf9d3-93cf-41b6-b788-94ce99d1ae25"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""D"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3fa9ac37-4bcb-4eff-8630-5a1d1ddd9183"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""A"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc006b47-f55e-45f7-be47-890e932fefb9"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Mouse Pos"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8dd57866-0036-412d-a2e6-89e830f49611"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Crouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d71eff2-a5d9-4312-b554-ee0e0f92f2a9"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96d24125-1335-4636-a445-18f8a3b05fd5"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -288,6 +440,14 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
         m_Player_Secondary_Right = m_Player.FindAction("Secondary_Right", throwIfNotFound: true);
         m_Player_Primary_Left = m_Player.FindAction("Primary_Left", throwIfNotFound: true);
         m_Player_Secondary_Left = m_Player.FindAction("Secondary_Left", throwIfNotFound: true);
+        m_Player_W = m_Player.FindAction("W", throwIfNotFound: true);
+        m_Player_A = m_Player.FindAction("A", throwIfNotFound: true);
+        m_Player_S = m_Player.FindAction("S", throwIfNotFound: true);
+        m_Player_D = m_Player.FindAction("D", throwIfNotFound: true);
+        m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
+        m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_MousePos = m_Player.FindAction("Mouse Pos", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -347,6 +507,14 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Secondary_Right;
     private readonly InputAction m_Player_Primary_Left;
     private readonly InputAction m_Player_Secondary_Left;
+    private readonly InputAction m_Player_W;
+    private readonly InputAction m_Player_A;
+    private readonly InputAction m_Player_S;
+    private readonly InputAction m_Player_D;
+    private readonly InputAction m_Player_Crouch;
+    private readonly InputAction m_Player_Sprint;
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_MousePos;
     public struct PlayerActions
     {
         private @Phyzk_Player m_Wrapper;
@@ -361,6 +529,14 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
         public InputAction @Secondary_Right => m_Wrapper.m_Player_Secondary_Right;
         public InputAction @Primary_Left => m_Wrapper.m_Player_Primary_Left;
         public InputAction @Secondary_Left => m_Wrapper.m_Player_Secondary_Left;
+        public InputAction @W => m_Wrapper.m_Player_W;
+        public InputAction @A => m_Wrapper.m_Player_A;
+        public InputAction @S => m_Wrapper.m_Player_S;
+        public InputAction @D => m_Wrapper.m_Player_D;
+        public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
+        public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @MousePos => m_Wrapper.m_Player_MousePos;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -400,6 +576,30 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
                 @Secondary_Left.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Left;
                 @Secondary_Left.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Left;
                 @Secondary_Left.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSecondary_Left;
+                @W.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnW;
+                @W.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnW;
+                @W.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnW;
+                @A.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @A.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @A.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnA;
+                @S.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS;
+                @S.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS;
+                @S.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnS;
+                @D.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
+                @D.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
+                @D.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnD;
+                @Crouch.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Crouch.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCrouch;
+                @Sprint.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Sprint.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSprint;
+                @Jump.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @Jump.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnJump;
+                @MousePos.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
+                @MousePos.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
+                @MousePos.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePos;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -434,6 +634,30 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
                 @Secondary_Left.started += instance.OnSecondary_Left;
                 @Secondary_Left.performed += instance.OnSecondary_Left;
                 @Secondary_Left.canceled += instance.OnSecondary_Left;
+                @W.started += instance.OnW;
+                @W.performed += instance.OnW;
+                @W.canceled += instance.OnW;
+                @A.started += instance.OnA;
+                @A.performed += instance.OnA;
+                @A.canceled += instance.OnA;
+                @S.started += instance.OnS;
+                @S.performed += instance.OnS;
+                @S.canceled += instance.OnS;
+                @D.started += instance.OnD;
+                @D.performed += instance.OnD;
+                @D.canceled += instance.OnD;
+                @Crouch.started += instance.OnCrouch;
+                @Crouch.performed += instance.OnCrouch;
+                @Crouch.canceled += instance.OnCrouch;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @MousePos.started += instance.OnMousePos;
+                @MousePos.performed += instance.OnMousePos;
+                @MousePos.canceled += instance.OnMousePos;
             }
         }
     }
@@ -495,5 +719,13 @@ public class @Phyzk_Player : IInputActionCollection, IDisposable
         void OnSecondary_Right(InputAction.CallbackContext context);
         void OnPrimary_Left(InputAction.CallbackContext context);
         void OnSecondary_Left(InputAction.CallbackContext context);
+        void OnW(InputAction.CallbackContext context);
+        void OnA(InputAction.CallbackContext context);
+        void OnS(InputAction.CallbackContext context);
+        void OnD(InputAction.CallbackContext context);
+        void OnCrouch(InputAction.CallbackContext context);
+        void OnSprint(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
+        void OnMousePos(InputAction.CallbackContext context);
     }
 }

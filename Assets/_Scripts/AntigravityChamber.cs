@@ -37,7 +37,7 @@ public class AntigravityChamber : MonoBehaviour
     {
         if (resetGravityOnEnter && col.CompareTag("Player"))
         {
-            player.gravity = player.initGravity;  
+            // player.gravity = player.initGravity;  
             // print(name + " reset gravity");          
         }    
     }
@@ -60,8 +60,8 @@ public class AntigravityChamber : MonoBehaviour
     
     public void ApplyGravity()
     {
-        if (playerInside && gravity != 0)
-            player.gravity = -gravity;
+        // if (playerInside && gravity != 0)
+        //     player.gravity = -gravity;
         
         for (int i = 0; i < rbList.Count; i++)
         {
