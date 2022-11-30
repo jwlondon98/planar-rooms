@@ -11,17 +11,31 @@ public class FPSCamera : MonoBehaviour
 
     [Range(-90f, 0)] [SerializeField] private float vertRotMin;
     [Range(0, 90f)] [SerializeField] private float vertRotMax;
-    private bool lockedCursor;
+    public bool lockedCursor;
+
+    public static FPSCamera instance;
     
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        lockedCursor = true;
     }
 
     void Update()
     {
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard.escapeKey.wasPressedThisFrame)
+            lockedCursor = !lockedCursor;
+        
+        if (!lockedCursor)
+            return;
+        
         Mouse mouse = Mouse.current;
         var mouseX = mouse.delta.x.ReadValue() * mouseSensitivity;
         var mouseY = mouse.delta.y.ReadValue() * mouseSensitivity;

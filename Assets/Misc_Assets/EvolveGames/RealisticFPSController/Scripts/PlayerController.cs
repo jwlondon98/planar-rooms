@@ -71,6 +71,9 @@ namespace EvolveGames
 
         void Update()
         {
+            if (!FPSCamera.instance.lockedCursor)
+                return;
+            
             RaycastHit CroughCheck;
             RaycastHit ObjectCheck;
 
