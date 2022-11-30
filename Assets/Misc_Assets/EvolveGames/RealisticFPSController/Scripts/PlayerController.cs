@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 
 namespace EvolveGames
 {
@@ -76,7 +75,6 @@ namespace EvolveGames
             RaycastHit ObjectCheck;
 
             Keyboard keyboard = Keyboard.current;
-            Mouse mouse = Mouse.current;
  
             if (!characterController.isGrounded && !isClimbing)
             {
@@ -85,9 +83,8 @@ namespace EvolveGames
             Vector3 forward = transform.TransformDirection(Vector3.forward);
             Vector3 right = transform.TransformDirection(Vector3.right);
             isRunning = !isCrough ? CanRunning ? keyboard.leftShiftKey.wasPressedThisFrame : false : false;
-            var vert = keyboard.wKey.wasPressedThisFrame ? 1 : keyboard.sKey.wasPressedThisFrame ? -1 : 0;
-            Debug.Log("vert: " + vert);
-            var horiz = keyboard.dKey.wasPressedThisFrame ? 1 : keyboard.aKey.wasPressedThisFrame ? -1 : 0;
+            var vert = keyboard.wKey.isPressed ? 1 : keyboard.sKey.isPressed ? -1 : 0;
+            var horiz = keyboard.dKey.isPressed ? 1 : keyboard.aKey.isPressed ? -1 : 0;
             
             vertical = canMove ? (isRunning ? RunningValue : WalkingValue) * vert : 0;
             horizontal = canMove ? (isRunning ? RunningValue : WalkingValue) * horiz : 0;
@@ -107,21 +104,8 @@ namespace EvolveGames
             characterController.Move(moveDirection * Time.deltaTime);
             Moving = horizontal < 0 || vertical < 0 || horizontal > 0 || vertical > 0 ? true : false;
 
-            if (Cursor.lockState == CursorLockMode.Locked && canMove)
-            {
-                var mousePos = mouse.position;
-                Lookvertical = -mousePos.y.ReadValue();
-                Lookhorizontal = mousePos.x.ReadValue();
-
-                var lookRate = lookSpeed / 10;
-                rotationX += Lookvertical * lookRate;
-                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-                Camera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-                // transform.rotation *= Quaternion.Euler(0, Lookhorizontal * lookRate, 0);
-
-                if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
-                else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
-            }
+            if (isRunning && Moving) cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, RunningFOV, SpeedToFOV * Time.deltaTime);
+            else cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, InstallFOV, SpeedToFOV * Time.deltaTime);
 
             if (keyboard.leftCtrlKey.wasPressedThisFrame)
             {
