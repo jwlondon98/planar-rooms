@@ -40,13 +40,18 @@ public class Outline : MonoBehaviour {
     }
   }
 
-  public float OutlineWidth {
-    get { return outlineWidth; }
-    set {
-      outlineWidth = value;
-      needsUpdate = true;
-    }
-  }
+  // public float OutlineWidth 
+  // {
+  //   get
+  //   {
+  //     return outlineWidth;
+  //   }
+  //   set 
+  //   {
+  //     outlineWidth = value;
+  //     needsUpdate = true;
+  //   }
+  // }
 
   [Serializable]
   private class ListVector3 {
@@ -59,11 +64,9 @@ public class Outline : MonoBehaviour {
   [SerializeField]
   private Color outlineColor = Color.white;
 
-  [SerializeField, Range(0f, 10f)]
-  private float outlineWidth = 2f;
+  [SerializeField] private float outlineWidth;
 
   [Header("Optional")]
-
   [SerializeField, Tooltip("Precompute enabled: Per-vertex calculations are performed in the editor and serialized with the object. "
   + "Precompute disabled: Per-vertex calculations are performed at runtime in Awake(). This may cause a pause for large meshes.")]
   private bool precomputeOutline;
@@ -99,8 +102,12 @@ public class Outline : MonoBehaviour {
     needsUpdate = true;
   }
 
-  void OnEnable() {
-    foreach (var renderer in renderers) {
+  void OnEnable()
+  {
+    MiscManager.instance.updateOutline += OnUpdateOutline;
+    
+    foreach (var renderer in renderers) 
+    {
 
       // Append outline shaders
       var materials = renderer.sharedMaterials.ToList();
@@ -133,12 +140,18 @@ public class Outline : MonoBehaviour {
     if (needsUpdate) {
       needsUpdate = false;
 
+      Debug.Log("outline update");
+      
       UpdateMaterialProperties();
     }
   }
 
-  void OnDisable() {
-    foreach (var renderer in renderers) {
+  void OnDisable() 
+  {
+    MiscManager.instance.updateOutline -= OnUpdateOutline;
+    
+    foreach (var renderer in renderers) 
+    {
 
       // Remove outline shaders
       var materials = renderer.sharedMaterials.ToList();
@@ -155,6 +168,12 @@ public class Outline : MonoBehaviour {
     // Destroy material instances
     Destroy(outlineMaskMaterial);
     Destroy(outlineFillMaterial);
+  }
+
+  public void OnUpdateOutline(float width)
+  {
+    outlineWidth = width;
+    needsUpdate = true;
   }
 
   void Bake() {
